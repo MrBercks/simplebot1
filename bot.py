@@ -1,12 +1,17 @@
 from telegram.ext import Updater, CommandHandler
 
+import settings
+
+
+
+
 def start_bot(bot, updater):
 	print("start")
 
 
 
 def main():
-	updtr = Updater('1089476369:AAFSy2_Rmxp02rISWXaoLHK-8eebXhcqWSo', use_context = True)
+	updtr = Updater(settings.TELEGRAM_API_KEY, use_context = True)
 
 	updtr.dispatcher.add_handler(CommandHandler("start", start_bot))
 

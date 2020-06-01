@@ -2,7 +2,7 @@ import logging
 from telegram.ext import Updater, CommandHandler
 import settings
 
-logging.basicConfig(format='%(name)s - %(levelname)s - %(message)s',
+logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',
 					level=logging.INFO,
 					filename='bot.log'
 					)

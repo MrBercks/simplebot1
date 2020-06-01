@@ -6,18 +6,13 @@ import settings
 
 
 def start_bot(bot, update):
-	print(update.message)
-	print("hello")
-	update.massage.reply_text("qwerty")
-	#print(bot)
+	print(update)
 	
-	#mytext = """Ну привет тебе, братюнь!
+	mytext = """Ну привет тебе, братюнь!
 
-#Я простой бот и понимаю только команду start
-	#"""
-	#print('common')
-	
-	#print('wtf')
+Я простой бот и понимаю только команду start
+	"""
+	update.message.reply_text(mytext)
 
 
 def main():

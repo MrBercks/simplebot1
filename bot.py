@@ -6,10 +6,9 @@ import settings
 
 
 def start_bot(bot, update):
-	print(update)
-	update.message.reply_text("222222")
-	print(bot)
-	update.message.reply_text("mytext")
+	#print(update)
+	update.massage.reply_text("qwerty")
+	#print(bot)
 	
 	#mytext = """Ну привет тебе, братюнь!
 
@@ -17,7 +16,7 @@ def start_bot(bot, update):
 	#"""
 	#print('common')
 	
-	print('wtf')
+	#print('wtf')
 
 
 def main():

@@ -8,10 +8,10 @@ import settings
 def start_bot(bot, update):
 	print(update)
 	
-	mytext = """Ну привет тебе, братюнь!
+	mytext = """Ну привет тебе, {}!
 
 Я простой бот и понимаю только команду start
-	"""
+	""".format(update.message.from.first_name)
 	update.message.reply_text(mytext)
 
 

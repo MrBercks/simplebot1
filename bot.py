@@ -14,7 +14,7 @@ def start_bot(bot, update):
 	"""
 	print('common')
 	update.message.reply_text(mytext)
-
+	print('wtf')
 
 
 def main():

@@ -11,7 +11,8 @@ def start_bot(bot, update):
 	mytext = """Ну привет тебе, {}!
 
 Я простой бот и понимаю только команду start
-	""".format(update.message.char.first_name)
+	""".format(update.message.chat.first_name)
+
 	update.message.reply_text(mytext)
 
 

@@ -8,12 +8,12 @@ import settings
 def start_bot(bot, update):
 	print(update)
 	print(bot)
-	mytext = """Ну привет тебе, братюнь!
+	#mytext = """Ну привет тебе, братюнь!
 
-Я простой бот и понимаю только команду start
-	"""
-	print('common')
-	update.message.reply_text(mytext)
+#Я простой бот и понимаю только команду start
+	#"""
+	#print('common')
+	update.message.reply_text("mytext")
 	print('wtf')
 
 

@@ -6,9 +6,10 @@ import settings
 
 
 def start_bot(bot, update):
+	print(update)
 	mytext = """Ну привет тебе, братюнь!
 
-Я простой бот и понимаю только команду /start
+Я простой бот и понимаю только команду start
 	"""
 	update.message.reply_text(mytext)
 

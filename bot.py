@@ -7,13 +7,16 @@ import settings
 
 def start_bot(bot, update):
 	print(update)
+	update.message.reply_text("222222")
 	print(bot)
+	update.message.reply_text("mytext")
+	
 	#mytext = """Ну привет тебе, братюнь!
 
 #Я простой бот и понимаю только команду start
 	#"""
 	#print('common')
-	update.message.reply_text("mytext")
+	
 	print('wtf')
 
 

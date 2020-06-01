@@ -7,10 +7,12 @@ import settings
 
 def start_bot(bot, update):
 	print(update)
+	print(bot)
 	mytext = """Ну привет тебе, братюнь!
 
 Я простой бот и понимаю только команду start
 	"""
+	print('common')
 	update.message.reply_text(mytext)
 
 	print("start") #пишется "start" в командной строке. это как бы отладочная фиговина

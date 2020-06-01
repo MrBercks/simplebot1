@@ -6,7 +6,8 @@ import settings
 
 
 def start_bot(bot, update):
-	#print(update)
+	print(update.message)
+	print("hello")
 	update.massage.reply_text("qwerty")
 	#print(bot)
 	

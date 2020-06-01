@@ -21,7 +21,7 @@ def start_bot(bot, update):
 
 
 def main():
-	updtr = Updater(settings.TELEGRAM_API_KEY, use_context = True)
+	updtr = Updater(settings.TELEGRAM_API_KEY)
 
 	updtr.dispatcher.add_handler(CommandHandler("start", start_bot)) #когда жмякают start, запускается функция start_bot
 

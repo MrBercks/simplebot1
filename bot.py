@@ -1,8 +1,11 @@
+import logging
 from telegram.ext import Updater, CommandHandler
-
 import settings
 
-
+logging.basicConfig(format='%(name)s - %(levelname)s - %(message)s',
+					level=logging.INFO,
+					filename='bot.log'
+					)
 
 
 def start_bot(bot, update):
@@ -31,6 +34,7 @@ def main():
 
 
 if __name__ == "__main__":
+	logging.info('Bot started')
 	main()
 
 

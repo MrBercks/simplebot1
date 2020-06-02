@@ -21,7 +21,7 @@ def start_bot(bot, update):
 def chat(bot,update):
 	text = update.message.text #равно введённому тексту
 	logging.info(text) #логинит то, что написал пользователь
-	update.message.reply_text('Сам' + text)
+	update.message.reply_text('Сам ' + text)
 
 
 

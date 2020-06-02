@@ -8,9 +8,7 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',
 					)
 
 
-def start_bot(bot, update):
-	print(update)
-	
+def start_bot(bot, update):	
 	mytext = """Ну привет тебе, {}!
 
 Твои друзья знают, что ты пидор?

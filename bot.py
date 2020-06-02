@@ -18,7 +18,8 @@ def start_bot(bot, update):
 
 def chat(bot,update):
 	text = update.message.text #равно введённому тексту
-	logging.info(updage.message.chat.username + ": "+ text) #логинит то, что написал пользователь
+	username = updage.message.chat.username #равно никнейму
+	logging.info('{}: {}'.format(username, text)) #логинит то, что написал пользователь
 	update.message.reply_text('Сам ' + text)
 
 

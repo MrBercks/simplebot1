@@ -23,9 +23,9 @@ def chat(bot,update):
 	logging.info('{}: {}'.format(username, text)) #логинит то, что написал пользователь
 	answers = {"привет":"И тебе привет!", "как дела":"Лучше всех!", "пока":"Увидимся", "not found":"Не понял тебя :("}
 	if text in answers:
-		return answers[text]
+		return update.message.reply_text(answers[text])
 	else:
-		return answers["not found"]
+		return update.message.reply_text(answers['not found'])
 	#update.message.reply_text('Сам ' + text)
 
 

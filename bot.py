@@ -14,13 +14,19 @@ def start_bot(bot, update):
 Твои друзья знают, что ты пидор?
 	""".format(update.message.chat.first_name)
 
+
 	update.message.reply_text(mytext)
 
 def chat(bot,update):
-	text = update.message.text #равно введённому тексту
+	text = update.message.text.lower() #равно введённому тексту
 	username = update.message.chat.username #равно никнейму
 	logging.info('{}: {}'.format(username, text)) #логинит то, что написал пользователь
-	update.message.reply_text('Сам ' + text)
+	answers = {"привет":"И тебе привет!", "как дела":"Лучше всех!", "пока":"Увидимся", "not found":"Не понял тебя :("}
+	if text in answers:
+		return answers[text]
+	else:
+		return answers["not found"]
+	#update.message.reply_text('Сам ' + text)
 
 
 

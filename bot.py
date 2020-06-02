@@ -1,5 +1,5 @@
 import logging
-from telegram.ext import Updater, CommandHandler
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import settings
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',
@@ -18,12 +18,19 @@ def start_bot(bot, update):
 
 	update.message.reply_text(mytext)
 
+def shat(bot,update):
+	text = update.message.text #равно введённому тексту
+	logging.info(text) #логинит то, что написал пользователь
+	update.message.reply_text('Сам' + text)
+
+
+
 
 def main():
 	updtr = Updater(settings.TELEGRAM_API_KEY)
 
 	updtr.dispatcher.add_handler(CommandHandler("start", start_bot)) #когда жмякают start, запускается функция start_bot
-
+	updtr.dispatcher.add_handler(MessageHandler(Filters.text, chat)) #добавили обработчик сообщений. Filters.text - введённый текст. chat - функция, куда передаётся update и bot
 
 
 

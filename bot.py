@@ -13,7 +13,7 @@ def start_bot(bot, update):
 	
 	mytext = """Ну привет тебе, {}!
 
-Я простой бот и понимаю только команду start
+Твои друзья знают, что ты пидор?
 	""".format(update.message.chat.first_name)
 
 	update.message.reply_text(mytext)

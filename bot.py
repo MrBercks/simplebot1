@@ -1,7 +1,6 @@
 import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import datetime
-from datetime import datetime
 import requests
 import settings
 
@@ -27,7 +26,7 @@ def get_weather(city):
 		timestamp = weather['dt']
 		time_now = datetime.datetime.fromtimestamp(timestamp)
 
-		final = "Город: {}. Время: {}.\n\n".format(weather['name'], time_now('%H-%M-%S'))
+		final = "Город: {}. Время: {}.\n\n".format(weather['name'], time_now.strftime('%H-%M-%S'))
 		final += "Погода: {} - {}.\n\n".format(weather['weather'][0]['main'], weather['weather'][0]['description'])
 		final += "Температура: {} C, ощущается, как: {} C.\n".format(weather['main']['temp'], weather['main']['feels_like'])
 		final += "Давление: {} мм.рт.ст. Влажность: {} %.\n\n".format(weather['main']['pressure']*0.75,weather['main']['humidity'])

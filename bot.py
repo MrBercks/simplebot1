@@ -19,15 +19,15 @@ def start_bot(bot, update):
 def get_weather(city):
 	result = requests.get('http://api.openweathermap.org/data/2.5/weather?q={}&APPID={}&units=metric&lang=ru'.format(city, settings.WEATHER_KEY))
 
-	if result.status_code == 200:
+	"""if result.status_code == 200:
 		weather = result.json()
 		final = "Выбранный город: {}\n\n".format(weather['name'])
 		final += "Погода: {}; {}\n".format(weather['weather']['main'], weather['weather']['description'])
 		final += ""
+"""
 
 
-
-		return (final)
+		return (result.json())
 
 
 

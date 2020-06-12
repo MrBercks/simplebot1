@@ -27,7 +27,7 @@ def get_weather(city):
 """
 
 
-		return (result.json())
+	return (result.json())
 
 
 

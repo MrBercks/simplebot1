@@ -26,10 +26,10 @@ def get_weather(city):
 		timestamp = weather['dt'] + weather['timezone']
 		time_now = datetime.datetime.fromtimestamp(timestamp)
 
-		final = "Погода в городе {},\n{}.\n\n".format(weather['name'], time_now.strftime('Время: %H:%M,\nДата: %d.%m.%Y'))
+		final = "Погода в городе {},\n{}.\n\n".format(weather['name'], time_now.strftime('Дата: %d.%m.%Y'))
 		final += "Погода: {} - {}.\n\n".format(weather['weather'][0]['main'], weather['weather'][0]['description'])
 		final += "Температура: {} C, ощущается, как {} C.\n".format(weather['main']['temp'], weather['main']['feels_like'])
-		final += "Давление: {} мм.рт.ст. Влажность: {} %.\n\n".format(weather['main']['pressure']*0.75,weather['main']['humidity'])
+
 
 		wind_course = weather['wind']['deg']
 		if wind_course >= 337.5 and wind_course < 22.5:
@@ -51,8 +51,9 @@ def get_weather(city):
 		else:
 			wind_course = 'ошибка :('
 
-		final += "Ветер - {}, скорость - {} метр/сек.\n".format(wind_course, weather['wind']['speed'])
+		final += "Ветер - {}, скорость - {} метр/сек.\n\n".format(wind_course, weather['wind']['speed'])
 
+		final += "Давление: {} мм.рт.ст. Влажность: {} %.\n\n".format(weather['main']['pressure']*0.75,weather['main']['humidity'])
 
 
 		return (final)

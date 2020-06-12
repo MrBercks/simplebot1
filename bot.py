@@ -18,7 +18,7 @@ def start_bot(bot, update):
 
 def get_weather(city):
 	result = requests.get('http://api.openweathermap.org/data/2.5/weather?q={}&APPID{}'.format(city, settings.WEATHER_KEY))
-	update.message.reply_text(requests.json())
+	return (requests.json())
 
 
 
@@ -32,7 +32,7 @@ def chat(bot,update):
 	else:
 		words = text.split(' ')
 		if len(words) == 2 and words[0] == 'погода':
-			get_weather(words[1])
+			update.message.reply_text(get_weather(words[1])) #возвращает погоду
 		else:
 			return update.message.reply_text("Не понял тебя :( \n\nДля запроса погоды напиши \"погода Moscow\" или впиши другой город.")
 	#update.message.reply_text('Сам ' + text)

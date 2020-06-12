@@ -18,7 +18,7 @@ def start_bot(bot, update):
 
 def get_weather(city):
 	result = requests.get('http://api.openweathermap.org/data/2.5/weather?q={}&APPID{}'.format(city, settings.WEATHER_KEY))
-	return (requests.json())
+	return (result.json())
 
 
 

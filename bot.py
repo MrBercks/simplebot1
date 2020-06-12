@@ -16,7 +16,7 @@ def start_bot(bot, update):
 	update.message.reply_text(mytext)
 
 def get_weather(city):
-	result = requests.get('http://api.openweathermap.org/data/2.5/weather?q={}}&APPID{}'.format(city, settings.WEATHER_KEY))
+	result = requests.get('http://api.openweathermap.org/data/2.5/weather?q={}&APPID{}'.format(city, settings.WEATHER_KEY))
 	update.message.reply_text(requests.json())
 
 

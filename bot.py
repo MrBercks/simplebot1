@@ -22,9 +22,10 @@ def get_weather(city):
 	if result.status_code == 200:
 		weather = {}
 		weather = result.json()
-		final = "Выбранный город: {}\n\n".format(weather['name'])
-		final += "Погода: {}; {}\n".format(weather['weather']['main'], weather['weather']['description'])
-		final += ""
+		final = "Выбранный город: {}\n".format(weather['name'])
+		final += "Погода: {}; {}\n".format(weather['weather'][0]['main'], weather['weather'][0]['description'])
+		final += "Температура: {}C. Ощущается,как: {}\nC".format(weather['main']['temp'], weather['main']['feels_like'])
+		final += "Давление: {} мм. ртутного столба. Влажность: {} %.\n".format(weather['main']['pressure'],weather['main']['humidity'])
 
 
 

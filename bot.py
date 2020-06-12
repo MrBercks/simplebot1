@@ -31,8 +31,8 @@ def get_weather(city):
 
 
 
-	else:
-		return("Сервер не отвечает :(")
+	# else:
+		# return("Сервер не отвечает :(")
 
 
 

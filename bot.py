@@ -17,8 +17,24 @@ def start_bot(bot, update):
 	update.message.reply_text(mytext)
 
 def get_weather(city):
-	result = requests.get('http://api.openweathermap.org/data/2.5/weather?q={}&APPID={}'.format(city, settings.WEATHER_KEY))
-	return (result.json())
+	result = requests.get('http://api.openweathermap.org/data/2.5/weather?q={}&APPID={}&units=metric&lang=ru'.format(city, settings.WEATHER_KEY))
+
+	if result.status_code == 200:
+		weather = result.json()
+		final = "Выбранный город: {}\n\n".format(weather['name'])
+		final += "Погода: {}; {}\n".format(weather['weather']['main'], weather['weather']['description'])
+		final += ""
+
+
+
+		return (final)
+
+
+
+	else:
+		return("Сервер не отвечает :(")
+
+
 
 
 

@@ -22,10 +22,32 @@ def get_weather(city):
 	if result.status_code == 200:
 		weather = {}
 		weather = result.json()
-		final = "Выбранный город: {}\n".format(weather['name'])
-		final += "Погода: {}; {}\n".format(weather['weather'][0]['main'], weather['weather'][0]['description'])
-		final += "Температура: {}C. Ощущается,как: {}\nC".format(weather['main']['temp'], weather['main']['feels_like'])
-		final += "Давление: {} мм. ртутного столба. Влажность: {} %.\n".format(weather['main']['pressure'],weather['main']['humidity'])
+		final = "Выбранный город: {}.\n\n".format(weather['name'])
+		final += "Погода: {} - {}.\n\n".format(weather['weather'][0]['main'], weather['weather'][0]['description'])
+		final += "Температура: {} C. Ощущается, как: {} C.\n".format(weather['main']['temp'], weather['main']['feels_like'])
+		final += "Давление: {} мм.рт.ст. Влажность: {} %.\n\n".format(weather['main']['pressure'],weather['main']['humidity'])
+
+		wind_course = weather['wind']['deg']
+		if wind_course >= 337.5 and wind_course < 22.5:
+			wind_course = 'северный'
+		elif wind_course >= 22.5 and wind_course < 67.5:
+			wind_course = 'северо-восточный'
+		elif wind_course >= 67.5 and wind_course < 112.5:
+			wind_course = 'восточный'
+		elif wind_course >= 112.5 and wind_course < 137.5:
+			wind_course = 'юго-восточный'
+		elif wind_course >= 137.5 and wind_course < 202.5:
+			wind_course = 'южный'
+		elif wind_course >= 202.5 and wind_course < 247.5:
+			wind_course = 'юго-западный'
+		elif wind_course >= 247.5 and wind_course < 292.5:
+			wind_course = 'западный'
+		elif wind_course >= 292.5 and wind_course < 337.5:
+			wind_course = 'северо-западный'
+		else:
+			wind_course = 'ошибка :('
+
+		final += "Ветер - {}, скорость - {} метр/сек.\n".format(wind_course, weather['wind']['speed'])
 
 
 
